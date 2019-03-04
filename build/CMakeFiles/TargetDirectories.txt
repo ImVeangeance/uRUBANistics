@@ -1,0 +1,3 @@
+/home/death/git/uRUBANistics/build/CMakeFiles/rebuild_cache.dir
+/home/death/git/uRUBANistics/build/CMakeFiles/calc.dir
+/home/death/git/uRUBANistics/build/CMakeFiles/edit_cache.dir
