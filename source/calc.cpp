@@ -26,30 +26,30 @@ int main(void)
 	unsigned short int Array1[max];
 	unsigned short int Array2[max];
 	unsigned short int Array_sum[max];
-	for(auto i = 0; i < max; i++)
-	{
-		Array1[i] = 0;
-		Array2[i] = 0;
-	}
-//	Array1[i] = s1[i] - 0x30;
-	for(auto i = 0; i < s2.size(); i++)
-	{
-		Array2[max - temp] = s1[s2.size() - temp] - 0x30;
-		temp++;		
-	}
-/*
-	temp = max;
-	for(auto i = s2.size(); i < 0; i--)
-	{
-		Array2[temp] = s2[i] - 0x30;
-		temp--;
-	}
-*/
-//	for(auto i = max - s2.size(); i < 0; i--)
-//		Array2[i] = '0' - 0x30;
-//
+	std::stringstream ss(s2);
 //	for(auto i = 0; i < max; i++)
-//		std::cout << Array1[i];
+//	{
+//		Array1[i] = 0;
+//		Array2[i] = 0;
+//	}
+	for(auto i = max - s1.size(); i < max;)
+	{
+		if(s1[i] == '1')
+			Array1[i] = 1;
+		else if(s1[i] == '2')
+			Array1[i] = 2;
+		else if(s1[i] == '3')
+			Array1[i] = 3;
+		i++;
+	}
+//	ss[s2.size()] >> Array2[max];
+//	Array1[i] = s1[i] - 0x30;
+//	for(auto i = max; i < max - s2.size(); i--)
+//		Array2[i] = s1[i] - 48;
+//	for(auto i = max - s2.size(); i < 0; i--)
+//		Array2[i] = '0' - 48;
+	for(auto i = 0; i < max; i++)
+		std::cout << Array1[i];
 		std::cout << std::endl;
 	for(auto i = 0; i < max; i++)
 		std::cout << Array2[i];
