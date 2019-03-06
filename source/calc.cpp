@@ -1,55 +1,58 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <sstream>
 
 int main(void)
 {
-	/* Variable  */
-	unsigned long long int num_size1, num_size2;
+	unsigned int num_size1 = 0, num_size2 = 0;
 	std::string s1, s2;
-	int pause;
-	short int max = 0, min = 0;
+	unsigned short int max = 1, min = 0, temp;
 	char action;
-	/* Inputing  */
-	std::cout << "Enter the first number: ";
+	std::cout << "Enter .. : ";
 	std::cin >> s1;
-	std::cout << "\nEnter the second number: ";
+	std::cin >> action;
 	std::cin >> s2;
-	std::cout << "\n(+ - * / )\nEnter the operation for action: ";
-	//std::cin >> action;
-	/*          */
-	std::cout << "\nSize of first number - "  << s1
-			  << "\nSize of second number - " << s2 << std::endl;
-	/* Array creating */
-	short int Array1[s1.size()];
-	short int Array2[s2.size()];
-	for(auto i = 0; i < s1.size(); i++)
-		Array1[i] = s1[i] - 0x30;
-	for(auto i = 0; i < s2.size() ; i++)
-		Array2[i] = s2[i] - 0x30;
-	/* 		          */
-	std::cout << std::endl;
-	/* difining */
+	std::cout << s1.size() << " " << action << " " << s2.size()  << std::endl;
 	if(s1.size() >= s2.size())
 	{
-		max = s1.size();
+		max += s1.size();
 		min = s2.size();
 	}
 	else
 	{
-		max = s2.size();
+		max += s2.size();
 		min = s1.size();
 	}
-	short int Array_sum[max];
-	/*          */
+	unsigned short int Array1[max];
+	unsigned short int Array2[max];
+	unsigned short int Array_sum[max];
+	for(auto i = 0; i < max; i++)
+	{
+		Array1[i] = 0;
+		Array2[i] = 0;
+	}
+//	Array1[i] = s1[i] - 0x30;
+	temp = max;
+	for(auto i = s2.size(); i < 0; i--)
+	{
+		Array2[temp] = s2[i] - 0x30;
+		temp--;
+	}
+//	for(auto i = max - s2.size(); i < 0; i--)
+//		Array2[i] = '0' - 0x30;
+//
+//	for(auto i = 0; i < max; i++)
+//		std::cout << Array1[i];
+		std::cout << std::endl;
+	for(auto i = 0; i < max; i++)
+		std::cout << Array2[i];
+/*
 //	switch(action)
 //	{
 //		case('+'):
 //		{
-
-//DOBIT' NULYAMI I VSE NICE	
-
-/*	
+//DOBIT' NULYAMI I VSE NICE		
 			for(auto i = max; i < 0; i--)
 			{
 				if(Array1[i] == NULL)
@@ -87,6 +90,7 @@ int main(void)
 //		}
 //	}
 	//for(auto)
-	//std::cin >> pause; 
+	std::cout << std::endl;
+	//std::cin >> pause;
 	return 0;
 }
