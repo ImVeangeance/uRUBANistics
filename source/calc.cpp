@@ -5,9 +5,8 @@
 
 int main(void)
 {
-	unsigned int num_size1 = 0, num_size2 = 0;
 	std::string s1, s2;
-	unsigned short int max = 1, min = 0, temp;
+	unsigned short int max = 1, min = 0, temp = 0;
 	char action;
 	std::cout << "Enter .. : ";
 	std::cin >> s1;
@@ -33,12 +32,19 @@ int main(void)
 		Array2[i] = 0;
 	}
 //	Array1[i] = s1[i] - 0x30;
+	for(auto i = 0; i < s2.size(); i++)
+	{
+		Array2[max - temp] = s1[s2.size() - temp] - 0x30;
+		temp++;		
+	}
+/*
 	temp = max;
 	for(auto i = s2.size(); i < 0; i--)
 	{
 		Array2[temp] = s2[i] - 0x30;
 		temp--;
 	}
+*/
 //	for(auto i = max - s2.size(); i < 0; i--)
 //		Array2[i] = '0' - 0x30;
 //
