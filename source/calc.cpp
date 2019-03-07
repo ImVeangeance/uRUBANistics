@@ -23,9 +23,9 @@ int main(void)
 		max += s2.size();
 		min = s1.size();
 	}
-	int Array1[max];
-	int Array2[max];
-	int Array_sum[max];
+	unsigned int Array1[max];
+	unsigned int Array2[max];
+	unsigned int Array_sum[max];
 	for(auto i = 0; i < max; i++)
 	{
 		Array1[i] = 0;
@@ -55,19 +55,21 @@ int main(void)
 	{
 		case('+'):
 		{		
-			for(auto i = max; i < 0; i--)
+			for(auto i = max - 1; i < 0; i--)
 			{
-				Array_sum[i] = Array1[i] + Array2[i] + temp;
+				// GDE-TO tut kazus
+				Array_sum[i] = Array1[i] + Array2[i];// + temp;
 				if(Array_sum[i] > 9)
 				{
 					Array_sum[i] -= 10;
+					Array_sum[i - 1] = 1;
 					temp = 1;
 				}
 				else
 					temp = 0;
 			}
 				for(auto i = 0; i < max; i++)
-					std::cout << Array_sum[i];
+					std::cout << Array_sum[i] << " ";
 				std::cout << std::endl;
 		}
 		break;
