@@ -8,9 +8,9 @@ int main(void)
 	std::string s1 = "52", s2 = "162";
 	char action = '*';
 	std::cout << "Enter .. : ";
-//	std::cin >> s1;
-//	std::cin >> action;
-//	std::cin >> s2;
+	std::cin >> s1;
+	std::cin >> action;
+	std::cin >> s2;
 	switch(action)
 	{
 		case('+'):
@@ -59,7 +59,7 @@ int main(void)
 			std::cout << static_cast<int>(Array2[i]);
 		}
 		break;
-		case('-'):
+/*		case('-'):
 		{
 			int max = 0, temp = 0;
 			max = s1.size() + s2.size();
@@ -102,11 +102,11 @@ int main(void)
 					//Array2[i - 1] += 1;   	
 		   	    }
 			}
-*/			for(auto i = 0; i < max; i++)	
-				std::cout << static_cast<int>(Array2[i])
-		}
-		break;
-		case('*'):
+*///			for(auto i = 0; i < max; i++)	
+//				std::cout << static_cast<int>(Array2[i])
+//		}
+//		break;
+/*		case('*'):
 		{
 			int max = 0, temp = 0;
 			max = s1.size() + s2.size();
@@ -138,18 +138,19 @@ int main(void)
 				std::cout << "-";
 			std::cout << "\n\t";
 			temp = max - 1;
-			//*
 			for (auto i = 0; i < max; i++)
 			{
 				for(auto j = 0; j < s1.size(); j++)
 				{
-					Array2[i] *= Array1[j];
+					Array2[j] *= Array1[i];
+					if(Array2[j] )
 					if(Array2[i])
 				}
 			}
 			for(auto i = 0; i < max; i++)	
 				std::cout << static_cast<int>(Array2[i]);
-		}
+				*/
+//		}	
 		break;
 		case('/'):
 		{
